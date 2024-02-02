@@ -1,0 +1,83 @@
+form.fancy-form {
+  background-color: mintcream;
+  overflow: auto;
+  max-width: 50%;
+  width: 400px;
+}
+
+form.fancy-form div {
+  margin: 1em;
+}
+
+form.fancy-form label:has(+ :is(input, select, textarea)[required])::after {
+  content: "*";
+  color: red;
+  vertical-align: super;
+  font-size: small;
+}
+
+form.fancy-form input[type="checkbox"]:not(:checked) + fieldset.conditional {
+  display: none;
+}
+
+form.fancy-form label {
+  display: block;
+}
+
+form.fancy-form :is(input, select, textarea) {
+  border: medium solid darkslateblue;
+  border-radius: 0.25em;
+  width: 100%;
+}
+
+form.fancy-form > div:has(button[type="submit"]) {
+  text-align: center;
+}
+
+form.fancy-form button[type="submit"] {
+  background-color: darkslateblue;
+  color: white;
+}
+
+form.fancy-form input[type="email"]:invalid {
+  background-color: tomato;
+  color: white;
+}
+
+form.fancy-form :focus {
+  border-color: gold;
+  border-width: thick;
+}
+
+/* Radio styling */
+.magiaugyi {
+  display: flex;
+  align-items: center;
+  border: medium solid darkslateblue;
+  padding: 0.5em;
+}
+
+#magiaNem,
+#magiaIgen {
+  width: 3em;
+}
+
+div.houseRadio {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+div.houseInputHolder {
+  padding: 0.5em;
+  border: medium solid darkslateblue;
+}
+
+div.teszlekValaszt {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex;
+}
+
+div.teszlekValaszt input {
+  width: 50px;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Roxforti regisztrációs űrlap</title>
+    <link rel="stylesheet" href="hogwarts-form.css" />
+  </head>
+  <body>
+    <h1>Roxforti regisztrációs űrlap</h1>
+    <form
+      id="hogwarts-form"
+      class="fancy-form"
+      method="post"
+      enctype="multipart/form-data"
+      action="https://webhook.site/87f08ba4-0074-4d71-bdeb-afa3793b0bb6"
+    >
+      <div>
+        <label for="name">Név</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="pl. Harry James Potter "
+        />
+      </div>
+      <div>
+        <label for="dob">Születési dátum</label>
+        <input type="date" name="dob" id="dob" required />
+      </div>
+      <!-- 5. alpont: jelszo -->
+      <div>
+        <label for="password">Jelszó</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          minlength="6"
+          pattern="[a-zA-Z0-9]*(([a-zA-Z][a-zA-Z0-9]*[0-9])|([0-9][a-zA-Z0-9]*[a-zA-Z]))[a-zA-Z0-9]*"
+          title="A jelszó legalább 6 karaktert kell, hogy tartalmazzon. Csak az angol ábécé nagybetűi és számjegyek megengedettek. A jelszónak betűt és számjegyet is tartalmaznia kell."
+          required
+        />
+        <!-- 7. alpont: jelszo ismetlese -->
+        <label for="password">Jelszó megint</label>
+        <input type="password" name="passwordAgain" id="passwordAgain" />
+        <!-- 7. alpont vege -->
+      </div>
+      <!-- 5. alpont vege -->
+      <div>
+        <label for="has-pet">Kijelentem, hogy van kisállatom.</label>
+        <input type="checkbox" name="has-pet" id="has-pet" value="yes" />
+        <fieldset class="conditional">
+          <legend>Kisállat</legend>
+          <label
+            >Faj<input type="text" name="pet-species" placeholder="pl. bagoly"
+          /></label>
+          <label
+            >Név<input type="text" name="pet-name" placeholder="pl. Hedvig"
+          /></label>
+        </fieldset>
+      </div>
+      <!-- 1. alpont: varazspalcak szama -->
+      <div>
+        <label for="number-of-wands">Varázspálcák száma</label>
+        <input
+          type="number"
+          id="number-of-wands"
+          name="number-of-wands"
+          min="0"
+          value="1"
+          required
+        />
+      </div>
+      <!-- 1. alpont vege -->
+      <div>
+        <label for="email">Email cím</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          pattern=".+@hogwarts\.ac\.uk"
+          placeholder="pl. hjp@hogwarts.ac.uk"
+          title="Egy @hogwarts.ac.uk végződésű email cím megadása kötelező."
+        />
+      </div>
+      <div>
+        <label for="comments">Megjegyzések</label>
+        <textarea
+          name="comments"
+          id="comments"
+          rows="5"
+          maxlength="200"
+          placeholder="pl. Benne szeretnék lenni a kviddics csapatban."
+        ></textarea>
+      </div>
+      <!-- 2. alpont: fajlos -->
+      <div>
+        <label for="photo">Fotó</label>
+        <input
+          type="file"
+          name="photo"
+          id="photo"
+          accept="image/png,image/jpeg"
+        />
+      </div>
+      <!-- 2. alpont vege -->
+      <!-- 3. alpont: magiaugyi miniszterium -->
+      <div class="magiaugyi">
+        <div>Meg akarod-e látogatni a Mágiaügyi Minisztériumot?</div>
+        <input type="radio" id="magiaIgen" name="magiaUgyiUtazas" value="yes" />
+        <label for="magiaIgen">Igen</label>
+        <input type="radio" id="magiaNem" name="magiaUgyiUtazas" value="no" />
+        <label for="magiaNem">Nem</label>
+      </div>
+      <!-- 3. alpont vege -->
+      <!-- 6. alpont: teszlek -->
+      <div class="teszlekValaszt">
+        <label for="teszlekValasztas"
+          >A Teszlek Süvegre bízom a ház választását</label
+        >
+        <input
+          type="checkbox"
+          id="teszlekValasztas"
+          name="teszlekValasztas"
+          value="yes"
+        />
+      </div>
+      <!-- 6. alpont vege -->
+      <!-- 4. alpont: hazas -->
+      <div>Ház</div>
+      <div class="houseInputHolder">
+        <div class="houseRadio">
+          <input
+            type="radio"
+            id="gryffindor"
+            name="house"
+            value="gryffindor"
+            data-color="red"
+            required
+          />
+          <label for="gryffindor">Griffendél</label>
+        </div>
+        <div class="houseRadio">
+          <input
+            type="radio"
+            id="hufflepuff"
+            name="house"
+            value="hufflepuff"
+            data-color="yellow"
+          />
+          <label for="hufflepuff">Hugrabug</label>
+        </div>
+        <div class="houseRadio">
+          <input
+            type="radio"
+            id="ravenclaw"
+            name="house"
+            value="ravenclaw"
+            data-color="blue"
+          />
+          <label for="ravenclaw">Hollóhát</label>
+        </div>
+        <div class="houseRadio">
+          <input
+            type="radio"
+            id="slytherin"
+            name="house"
+            value="slytherin"
+            data-color="green"
+          />
+          <label for="slytherin">Mardekár</label>
+        </div>
+      </div>
+      <!-- 4. alpont vege -->
+      <div>
+        <button type="submit">Küldés</button>
+      </div>
+    </form>
+    <script src="hogwarts-form-extra_hu.js"></script>
+  </body>
+</html>
