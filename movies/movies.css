@@ -1,0 +1,52 @@
+movies{
+    display: block;
+    background-color: mintcream;
+    font-family: sans-serif;
+    margin: 1em;
+}
+movie{
+    display: list-item;/*bekezdések listázása*/
+    list-style-type: disc;
+    margin-left: 2em;
+    padding: 0.25em;
+}
+title{
+    display: none;
+}
+title:lang(en){
+    display: inline;
+}
+year::before{
+    content: "(";
+}
+year::after{
+    content: ")";
+}
+genre, rating, movie:hover::after{
+    padding: 0.25em;
+    color: white;
+    border-radius: 0.25em; /*lekerekítés*/
+}
+genre{
+    display: inline-block;
+    width: 5em;
+    text-align: center;
+    background-color:violet;
+}
+rating{
+    background-color: hotpink;
+}
+rating::after{
+    content: "/10";
+}
+votes::before{
+    content: "from ";
+}
+votes::after{
+    content: " ratings";
+}
+movie:hover::after{
+    content: "https://www.imdv.com/title/tt" attr(id);
+    background-color: gold;
+    color: blueviolet;
+}
